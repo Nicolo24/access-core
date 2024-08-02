@@ -59,7 +59,7 @@ class ApiAccessController extends Controller
     public function sendUpdate(Request $request)
     {
         $data = $request->all();
-        AccessRequest::where('action_id', $data['action_id'])
+        AccessRequest::where('id', $data['action_id'])
             ->update(['action_status' => $data['status']]);
         return response()->json([]);
     }
