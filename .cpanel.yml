@@ -3,6 +3,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/lerolero/access-core
-    - export DEPLOYURL=https://access-core.lerolero.com.ec/
-    - export DEPLOYUSER=lerolero
+    - cp -r * $DEPLOYPATH
     
