@@ -6,5 +6,10 @@ deployment:
     - cp -r * $DEPLOYPATH
     # php artisan migrate --force
     - cd $DEPLOYPATH
-    - /usr/local/bin/php /opt/cpanel/ea-php83/root/usr/bin/composer install
+    # check if composer is installed
+    - if [ ! -f composer.phar ]; then
+    - curl -sS https://getcomposer.org/installer | php
+    - fi
+    - php composer.phar install
+    - php artisan migrate --force
     
