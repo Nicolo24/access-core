@@ -5,7 +5,3 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/lerolero/access-core
     - /bin/cp -r * $DEPLOYPATH
-    - cd $DEPLOYPATH
-    - npm install
-    - npm run build
-    
