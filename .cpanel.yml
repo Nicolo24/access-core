@@ -6,10 +6,6 @@ deployment:
     - cp -r * $DEPLOYPATH
     # php artisan migrate --force
     - cd $DEPLOYPATH
-    # check if composer is installed
-    - if [ ! -f composer.phar ]; then
-    - curl -sS https://getcomposer.org/installer | php
-    - fi
-    - php composer.phar install
-    - php artisan migrate --force
+    # search for composer and run it
+    - composer install
     
