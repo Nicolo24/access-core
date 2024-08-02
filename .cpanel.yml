@@ -7,5 +7,5 @@ deployment:
     # php artisan migrate --force
     - cd $DEPLOYPATH
     # search for composer and run it
-    - composer install
+    - /usr/local/bin/composer install
     
