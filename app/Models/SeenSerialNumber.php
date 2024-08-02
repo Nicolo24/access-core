@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class SeenSerialNumber extends Model
 {
     use HasFactory;
+    protected $fillable = ['serial_number', 'seen_at'];
 }

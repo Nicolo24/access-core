@@ -27,7 +27,7 @@ class ApiAccessController extends Controller
     public function createDeviceForm(Request $request)
     {
         $seenSerialNumbers = SeenSerialNumber::all();
-        $form = view('device_form', compact('seenSerialNumbers'))->render();
+        $form = view('device.form', compact('seenSerialNumbers'))->render();
         return response($form);
     }
 
@@ -49,7 +49,10 @@ class ApiAccessController extends Controller
             ['seen_at' => now()]
         );
         return response()->json(
-            AccessRequest::where('action_status', 'pending')->get()
+            AccessRequest::where('serial_number', $serial_number)
+                ->where('action_name', 'open')
+                ->where('action_status', 'pending')
+                ->get()
         );
     }
 
@@ -74,6 +77,7 @@ class ApiAccessController extends Controller
 
     public function sendAccessRequest(Request $request)
     {
+        //post method
         $data = $request->all();
         $device = Device::find($data['device_id']);
         $accessRequest = AccessRequest::create([

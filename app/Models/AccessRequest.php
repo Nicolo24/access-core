@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class AccessRequest extends Model
 {
     use HasFactory;
+    protected $fillable = ['action_name', 'action_status', 'serial_number'];
 }
