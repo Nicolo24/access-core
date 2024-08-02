@@ -2,6 +2,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/lerolero/public_html/laraveltest
+    - export DEPLOYPATH=/home/lerolero/access-core.lerolero.com.ec
     - cp -r * $DEPLOYPATH
     
