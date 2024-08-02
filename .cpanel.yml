@@ -4,8 +4,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/lerolero/access-core.lerolero.com.ec
     - cp -r * $DEPLOYPATH
-    # php artisan migrate --force
-    - cd $DEPLOYPATH
-    # search for composer and run it
-    - /usr/local/bin/composer install
     
