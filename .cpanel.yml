@@ -1,6 +1,11 @@
 # copy all files in the directory to the /home/lerolero/access-core
+# run npm install and npm run build
 ---
 deployment:
   tasks:
     - export DEPLOYPATH=/home/lerolero/access-core
     - /bin/cp -r * $DEPLOYPATH
+    - cd $DEPLOYPATH
+    - npm install
+    - npm run build
+    
